@@ -1,5 +1,6 @@
 package com.eikkomass.tutorialmod;
 
+import com.eikkomass.tutorialmod.block.ModBlocks;
 import com.eikkomass.tutorialmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
@@ -22,6 +23,7 @@ public class TutorialMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
