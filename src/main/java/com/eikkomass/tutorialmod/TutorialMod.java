@@ -1,5 +1,6 @@
-package com.eikkomass.eikkosamazonfruits;
+package com.eikkomass.tutorialmod;
 
+import com.eikkomass.tutorialmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -12,13 +13,15 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(EikkosAmazonFruits.MOD_ID)
-public class EikkosAmazonFruits {
-    public static final String MOD_ID = "eikkosamazonfruits";
+@Mod(TutorialMod.MOD_ID)
+public class TutorialMod {
+    public static final String MOD_ID = "tutorialmod";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public EikkosAmazonFruits() {
+    public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

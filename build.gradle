@@ -5,8 +5,8 @@ plugins {
 }
 
 version = '0.0.1-1.19.2'
-group = 'com.eikkomass.eikkosamazonfruits' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'eikkosamazonfruits'
+group = 'com.eikkomass.tutorialmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'tutorialmod'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -49,10 +49,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'eikkosamazonfruits'
+            property 'forge.enabledGameTestNamespaces', 'tutorialmod'
 
             mods {
-                eikkosamazonfruits {
+                tutorialmod {
                     source sourceSets.main
                 }
             }
@@ -65,10 +65,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'eikkosamazonfruits'
+            property 'forge.enabledGameTestNamespaces', 'tutorialmod'
 
             mods {
-                eikkosamazonfruits {
+                tutorialmod {
                     source sourceSets.main
                 }
             }
@@ -84,10 +84,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'eikkosamazonfruits'
+            property 'forge.enabledGameTestNamespaces', 'tutorialmod'
 
             mods {
-                eikkosamazonfruits {
+                tutorialmod {
                     source sourceSets.main
                 }
             }
@@ -101,10 +101,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'eikkosamazonfruits', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'tutorialmod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                eikkosamazonfruits {
+                tutorialmod {
                     source sourceSets.main
                 }
             }
@@ -147,12 +147,12 @@ dependencies {
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
-        attributes(["Specification-Title"     : "eikkosamazonfruits",
-                    "Specification-Vendor"    : "eikkosamazonfruitssareus",
+        attributes(["Specification-Title"     : "tutorialmod",
+                    "Specification-Vendor"    : "tutorialmodsareus",
                     "Specification-Version"   : "1", // We are version 1 of ourselves
                     "Implementation-Title"    : project.name,
                     "Implementation-Version"  : project.jar.archiveVersion,
-                    "Implementation-Vendor"   : "eikkosamazonfruitssareus",
+                    "Implementation-Vendor"   : "tutorialmodsareus",
                     "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")])
     }
 }
