@@ -2,6 +2,7 @@ package com.eikkomass.tutorialmod.block;
 
 import com.eikkomass.tutorialmod.TutorialMod;
 import com.eikkomass.tutorialmod.block.custom.JumpyBlock;
+import com.eikkomass.tutorialmod.block.custom.ZirconLampBlock;
 import com.eikkomass.tutorialmod.item.ModCreativeModeTab;
 import com.eikkomass.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -29,6 +30,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ZIRCON_ORE = registerBlock("deepslate_zircon_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)), ModCreativeModeTab.TUTORIAL_TAB);
 
     public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block", () -> new JumpyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> ZIRCON_LAMP = registerBlock("zircon_lamp", () -> new ZirconLampBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops().lightLevel(state -> state.getValue(ZirconLampBlock.LIT) ? 15 : 0)), ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
 
