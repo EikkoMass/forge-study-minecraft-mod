@@ -17,5 +17,7 @@
 
   "msg.tutorialmod.right_click_random_num": "Right click to get a random number!",
 
-  "tip.tutorialmod.press_shift_more_info": "Press SHIFT for more Info"
+  "tip.tutorialmod.press_shift_more_info": "Press SHIFT for more Info",
+
+  "entity.minecraft.villager.tutorialmod.jumpy_master": "Jumpy Master"
 }
