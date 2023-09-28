@@ -4,6 +4,8 @@ import com.eikkomass.tutorialmod.block.ModBlocks;
 import com.eikkomass.tutorialmod.item.ModItems;
 import com.eikkomass.tutorialmod.painting.ModPaintings;
 import com.eikkomass.tutorialmod.villager.ModVillagers;
+import com.eikkomass.tutorialmod.world.feature.ModConfiguredFeatures;
+import com.eikkomass.tutorialmod.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -28,8 +30,13 @@ public class TutorialMod {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModVillagers.register(modEventBus);
+
         ModPaintings.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
