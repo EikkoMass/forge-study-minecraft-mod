@@ -2,6 +2,7 @@ package com.eikkomass.tutorialmod;
 
 import com.eikkomass.tutorialmod.block.ModBlocks;
 import com.eikkomass.tutorialmod.item.ModItems;
+import com.eikkomass.tutorialmod.painting.ModPaintings;
 import com.eikkomass.tutorialmod.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -28,6 +29,7 @@ public class TutorialMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModPaintings.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
