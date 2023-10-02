@@ -1,6 +1,9 @@
 {
   "key.category.tutorialmod.tutorial": "Tutorial Mod",
 
+  "message.tutorialmod.drink_water": "Drinking Water",
+  "message.tutorialmod.no_water": "No Water nearby!",
+
   "key.tutorialmod.drink_water": "Drink Water",
 
   "item.tutorialmod.zircon": "Zircon",

@@ -2,6 +2,7 @@ package com.eikkomass.tutorialmod;
 
 import com.eikkomass.tutorialmod.block.ModBlocks;
 import com.eikkomass.tutorialmod.item.ModItems;
+import com.eikkomass.tutorialmod.networking.ModMessages;
 import com.eikkomass.tutorialmod.painting.ModPaintings;
 import com.eikkomass.tutorialmod.villager.ModVillagers;
 import com.eikkomass.tutorialmod.world.feature.ModConfiguredFeatures;
@@ -47,6 +48,7 @@ public class TutorialMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ModMessages.register();
             ModVillagers.registerPOIs();
         });
     }
