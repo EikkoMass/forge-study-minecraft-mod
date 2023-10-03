@@ -1,5 +1,6 @@
 package com.eikkomass.tutorialmod.networking.packet;
 
+import com.eikkomass.tutorialmod.networking.ModMessages;
 import com.eikkomass.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
@@ -56,6 +57,8 @@ public class DrinkWaterC2SPacket {
 
                     // Output the current thirst level
                     player.sendSystemMessage(Component.literal("Current Thirst " + playerThirst.getThirst()).withStyle(ChatFormatting.AQUA));
+
+                    ModMessages.sendToPlayer(new ThirstDataSyncC2SPacket(playerThirst.getThirst()), player);
                 });
 
             } else {
@@ -69,6 +72,8 @@ public class DrinkWaterC2SPacket {
 
                     // Output the current thirst level
                     player.sendSystemMessage(Component.literal("Current Thirst " + playerThirst.getThirst()).withStyle(ChatFormatting.AQUA));
+
+                    ModMessages.sendToPlayer(new ThirstDataSyncC2SPacket(playerThirst.getThirst()), player);
                 });
 
             }

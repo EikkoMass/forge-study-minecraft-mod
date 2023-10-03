@@ -1,11 +1,13 @@
 package com.eikkomass.tutorialmod.event;
 
 import com.eikkomass.tutorialmod.TutorialMod;
+import com.eikkomass.tutorialmod.client.ThirstHudOverlay;
 import com.eikkomass.tutorialmod.networking.ModMessages;
 import com.eikkomass.tutorialmod.networking.packet.DrinkWaterC2SPacket;
 import com.eikkomass.tutorialmod.util.KeyBinding;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +29,11 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyRegister(RegisterKeyMappingsEvent event) {
             event.register(KeyBinding.DRINKING_KEY);
+        }
+
+        @SubscribeEvent
+        public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+            event.registerAboveAll("thirst", ThirstHudOverlay.HUD_THIRST);
         }
     }
 }
