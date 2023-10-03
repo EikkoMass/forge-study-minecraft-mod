@@ -1,5 +1,6 @@
 package com.eikkomass.tutorialmod.networking.packet;
 
+import com.eikkomass.tutorialmod.thirst.PlayerThirstProvider;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -50,8 +51,12 @@ public class DrinkWaterC2SPacket {
 
                 // increase the water level / thirst level of player
 
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(playerThirst -> {
+                    playerThirst.addThirst(1);
 
-                // Output the current thirst level
+                    // Output the current thirst level
+                    player.sendSystemMessage(Component.literal("Current Thirst " + playerThirst.getThirst()).withStyle(ChatFormatting.AQUA));
+                });
 
             } else {
 
@@ -59,8 +64,12 @@ public class DrinkWaterC2SPacket {
 
                 player.sendSystemMessage(Component.translatable(MESSAGE_NO_WATER).withStyle(ChatFormatting.RED));
 
-                // Output the current thirst level
 
+                player.getCapability(PlayerThirstProvider.PLAYER_THIRST).ifPresent(playerThirst -> {
+
+                    // Output the current thirst level
+                    player.sendSystemMessage(Component.literal("Current Thirst " + playerThirst.getThirst()).withStyle(ChatFormatting.AQUA));
+                });
 
             }
 
