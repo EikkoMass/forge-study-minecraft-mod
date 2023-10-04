@@ -1,6 +1,8 @@
 package com.eikkomass.tutorialmod;
 
 import com.eikkomass.tutorialmod.block.ModBlocks;
+import com.eikkomass.tutorialmod.fluid.ModFluidTypes;
+import com.eikkomass.tutorialmod.fluid.ModFluids;
 import com.eikkomass.tutorialmod.item.ModItems;
 import com.eikkomass.tutorialmod.networking.ModMessages;
 import com.eikkomass.tutorialmod.painting.ModPaintings;
@@ -39,6 +41,10 @@ public class TutorialMod {
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
+        ModFluids.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -59,7 +65,8 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_SOAP_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_SOAP_WATER.get(), RenderType.translucent());
         }
     }
 }
